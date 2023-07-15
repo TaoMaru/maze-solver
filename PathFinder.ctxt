@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=PathFinder
+comment0.text=\r\n\ PathFinder\:\ this\ class\ utilizes\ recursion\ to\ find\ exits\ in\ a\ maze,\ which\ is\ given\r\n\ to\ an\ instance\ of\ PathFinder\ as\ a\ 2D\ array\r\n\ <p>\r\n\ V2.1\:\ takes\ first\ steps\ to\ fix\ StackOverflowError\ for\ mazes\ with\ large\ open\ areas\r\n\ by\ creating\ a\ copy\ of\ the\ maze\ array\r\n\ </p>\r\n\ <p>\r\n\ Feb\ 08\:\ V2.2\ Adds\ accessor\ methods\ for\ instance\ variables\r\n\ V2.3\ Fixes\ infinicursion\ by\ checking\ 'map'\ of\ maze\ via\ mazeCopy\ tile\ flipping\ to\ prevent\r\n\ traversal\ of\ maze\ positions\ already\ checked.\r\n\ </p>\r\n\ <p>\r\n\ Feb\ 12\:\ V3.0\ Removes\ redundancy\ and\ eliminates\ unecessary\ conditional\ statements\r\n\ </p>\r\n\ @author\ Maria\ Jackson\r\n\ @version\ Feb\ 12,\ 2023\ -\ Version\ 3.0\r\n
+comment1.params=rowIndex\ colIndex\ dir
+comment1.target=PathFinder(int,\ int,\ PathFinder.Direction)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ PathFinder\r\n\ \r\n\ @param\ rowIndex\ (int)\ -\ the\ current\ row\ index,\ path\ finder\ starting\ position\r\n\ @param\ colIndex\ (int)\ -\ current\ column\ index,\ path\ finder\ starting\ position\r\n\ @param\ dir\ (Direction)\ -\ the\ direction\ used\ to\ initiate\ maze\ traversal\r\n
+comment2.params=
+comment2.target=int\ getCurrentRow()
+comment2.text=\r\n\ get\ the\ current\ row\ value\ for\ PathFinder\r\n\ @return\ currentRow\ -\ row\ index\ of\ current\ position\r\n
+comment3.params=
+comment3.target=int\ getCurrentCol()
+comment3.text=\r\n\ get\ the\ current\ column\ value\ for\ PathFinder\r\n\ @return\ currentCol\ -\ column\ index\ of\ current\ position\r\n
+comment4.params=
+comment4.target=PathFinder.Direction\ getPreviousMove()
+comment4.text=\r\n\ get\ the\ previousMove\ value\ for\ PathFinder\r\n\ @return\ previousMove\ -\ the\ direction\ traveled\ to\ get\ to\ current\ position\r\n
+comment5.params=originalMaze
+comment5.target=void\ copyMaze(int[][])
+comment5.text=\r\n\ makes\ copy\ of\ original\ maze\ array\ -\ sets\ new\ value\ to\ mazeCopy\r\n\ @param\ originalMaze\ (int[][])\ -\ the\ original\ 2D\ maze\ array\ to\ be\ copied\r\n
+comment6.params=currRow\ currCol\ exitRow\ exitCol\ maze2D\ cameFrom
+comment6.target=boolean\ hasPath(int,\ int,\ int,\ int,\ int[][],\ PathFinder.Direction)
+comment6.text=\r\n\ Uses\ recursion\ to\ determine\ maze\ path\ from\ entrance\ to\ exit\:\r\n\ Each\ move\ in\ maze\ -\ indicated\ by\ direction\ 'cameFrom'\ -\ checks\ the\ other\ three\r\n\ possible\ directions\ (e.g.\ DOWN,\ RIGHT,\ &\ LEFT)\ while\ ignoring\ the\ previous\ position.\r\n\ <p>\r\n\ Each\ move\ in\ maze\ 'flips'\ the\ previous\ position\ in\ mazeCopy\ to\ indicate\ that\ the\r\n\ position\ has\ already\ been\ checked.\r\n\ </p>\r\n\ <p>\r\n\ Each\ call\ to\ hasPath\ requires\ an\ update\ of\ both\ the\ current\ position\ (row,\ col)\ &\r\n\ the\ direction\ moved\ to\ get\ to\ the\ current\ position.\ The\ potential\ exit\ position\r\n\ (row,\ col)\ &\ original\ maze\ array\ remain\ the\ same\ .\r\n\ </p>\r\n\ \r\n\ @param\ currRow\ (int)\ -\ current\ row\ index\r\n\ @param\ currCol\ (int)\ -\ current\ column\ index\r\n\ @param\ exitRow\ (int)\ -\ exit\ row\ index\r\n\ @param\ exitCol\ (int)\ -\ exit\ column\ index\r\n\ @param\ maze2D\ (int[][])\ -\ 2D\ array\ of\ maze\ values\r\n\ @param\ cameFrom\ -\ direction\ of\ previous\ place\ in\ maze\r\n\ @return\ boolean\ -\ true\ if\ current\ position\ is\ open\ (0)\ AND\ an\ open\ position\ has\ been\r\n\ found\ in\ one\ of\ the\ neighboring\ positions.\ False\ if\ closed\ (1).\r\n
+numComments=7
